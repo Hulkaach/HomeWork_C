@@ -5,12 +5,8 @@
 // 7 -> нет
 Console.Write("Введи число ");
 int num1 = Convert.ToInt32(Console.ReadLine());
-if (num1 < 0)
-{
-    num1 = num1 * -1;
-}
-int num2 = num1 % 2;
-if (num2 > 0)
+
+if (num1 % 2 == 1)
 {
     Console.Write("Введенное число явлеятся нечетным");
 }
