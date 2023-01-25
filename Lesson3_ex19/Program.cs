@@ -3,3 +3,7 @@
 // 14212 -> нет
 // 12821 -> да
 // 23432 -> да
+Console.WriteLine("Введите число ");
+int num = int.Parse(Console.ReadLine());
+
+Console.WriteLine("Введенное число " + num + " является палиндромом")
