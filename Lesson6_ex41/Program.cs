@@ -2,9 +2,10 @@
 // 0, 7, 8, -2, -2 -> 2
 // 1, -7, 567, 89, 223-> 3
 Console.WriteLine("Введите какое количество чисел необходимо ? ");
+
 int quantityNumbers = Convert.ToInt32(Console.ReadLine());
 
-int[] InputNumbres(int argyment)
+void InputNumbres(int argyment)
 {
     int[] array = new int[argyment];
     int countNumbers = 0;
@@ -15,7 +16,6 @@ int[] InputNumbres(int argyment)
         array[i] = number;
         if (array[i] > 0) countNumbers++;
     }
-    Console.WriteLine($"-> Количество введенных чисел больше 0 равно {countNumbers}");
-    return array; // зачем мне это? что она дает и как ее передать дальше, например в другой метод?
+    Console.WriteLine($"-> Количество введенных чисел больше 0 равно {countNumbers}"); 
 }
 InputNumbres(quantityNumbers);
