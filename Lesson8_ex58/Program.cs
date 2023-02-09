@@ -5,14 +5,62 @@
 // Результирующая матрица будет:
 // 18 20
 // 15 18
+Console.WriteLine("Введите размерность прямоугольных матриц: ");
+int rows = Convert.ToInt32(Console.ReadLine());
+int columns = rows;
+int[,] firstArray = new int[rows, columns];
+int[,] secondArray = new int[rows, columns];
 
+Console.WriteLine("Первая матрица: ");
+FillArray(firstArray);
+PrintArray(firstArray);
+
+Console.WriteLine("Вторая матрица: ");
+FillArray(secondArray);
+PrintArray(secondArray);
+
+Console.WriteLine("Произведение матриц: ");
+matrixMultiplication(firstArray, secondArray);
+
+void FillArray(int[,] argyment)
 {
-  for (int i = 0; i < array.GetLength(0); i++)
-  {
-    for (int j = 0; j < array.GetLength(1); j++)
+    for (int i = 0; i < argyment.GetLength(0); i++)
     {
-      Console.Write(array[i,j] + " ");
+        for (int j = 0; j < argyment.GetLength(1); j++)
+        {
+            argyment[i, j] = new Random().Next(1, 10);
+        }
     }
-    Console.WriteLine();
-  }
+}
+
+void PrintArray(int[,] argyment)
+{
+    for (int i = 0; i < argyment.GetLength(0); i++)
+    {
+        for (int j = 0; j < argyment.GetLength(1); j++)
+        {
+            Console.Write($"{argyment[i, j],4}");
+        }
+        Console.WriteLine();
+    }
+}
+
+void matrixMultiplication(int[,] arr1, int[,] arr2)
+{
+    int[,] multiplyArray = new int[rows, columns];
+    for (int i = 0; i < arr1.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr1.GetLength(1); j++)
+        {
+            int sum = 0;
+            for (int k = 0; k < arr2.GetLength(1); k++)
+            {
+                sum += arr1[i, k] * arr2[k, j];
+            }
+            multiplyArray[i, j] = sum;
+            Console.Write($"{multiplyArray[i, j],4} ");
+
+        }
+        Console.WriteLine();
+    }
 }
